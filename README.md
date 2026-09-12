@@ -15,18 +15,11 @@ Built from first principles using **Next.js 14+ App Router**, **TypeScript**, an
 
 ## 📸 Visual Showcase
 
-### Telemetric Operations Dashboard
-
 ![PULSE60 Operations Dashboard](./public/dashboard_preview.png)
-
-### Modern Workspace Authentication
-
-![PULSE60 Sign In Screen](./public/login-art.jpg)
 
 ---
 
 ## ⚡ Performance Benchmarks & Targets
-
 
 | Metric | Target Requirement | Measured Performance (Production Build) |
 | :--- | :--- | :--- |
@@ -44,12 +37,12 @@ Built from first principles using **Next.js 14+ App Router**, **TypeScript**, an
 Most real-time dashboards stutter because they conflate data arrival with React state reconciliations. **PULSE60** decouples execution into three completely independent execution clocks:
 
 ```mermaid
-graph TD
-    A[Data Influx: 10Hz] -->|O(1) Circular Append & Zero Allocations| B[Float64Array Ring Buffer in useRef]
-    B -->|Direct Imperative Read| C[Canvas RAF Draw Loop: 60Hz]
-    C -->|LTTB Downsampling & Spatial LOD| D[Canvas Pixels & ImageData Blits]
-    B -->|Throttled Sample: 4Hz| E[React UI State: FPS, Memory, Table]
-    E --> F[DOM Elements & Virtualized Ledger]
+flowchart TD
+    A["Data Influx: 10Hz"] -->|"O(1) Append & Zero Allocation"| B["Float64Array Ring Buffer in useRef"]
+    B -->|"Direct Imperative Read"| C["Canvas RAF Draw Loop: 60Hz"]
+    C -->|"LTTB Downsampling & Spatial LOD"| D["Canvas Pixels & ImageData Blits"]
+    B -->|"Throttled Sample: 4Hz"| E["React UI State: FPS, Memory, Table"]
+    E --> F["DOM Elements & Virtualized Ledger"]
 ```
 
 1. **Clock 1 (Data Arrival — 10Hz / 100ms)**: Writes incoming telemetry tuples directly into preallocated `Float64Array` and `Uint8Array` circular ring buffers. Zero per-tick garbage collection allocations.
@@ -217,4 +210,3 @@ flam-project/
 ## 📄 License
 
 This project is open-source under the [MIT License](LICENSE).
-
