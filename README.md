@@ -16,14 +16,17 @@ Built from first principles using **Next.js 14+ App Router**, **TypeScript**, an
 ## 📸 Visual Showcase
 
 ### Telemetric Operations Dashboard
+
 ![PULSE60 Operations Dashboard](./public/dashboard_preview.png)
 
 ### Modern Workspace Authentication
+
 ![PULSE60 Sign In Screen](./public/login-art.jpg)
 
 ---
 
 ## ⚡ Performance Benchmarks & Targets
+
 
 | Metric | Target Requirement | Measured Performance (Production Build) |
 | :--- | :--- | :--- |
@@ -101,6 +104,7 @@ All visualization components are built from scratch utilizing a Canvas + SVG/HTM
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 18.17+ or 20+ (Node v20–v24 supported)
 - npm, pnpm, or yarn
 
@@ -134,9 +138,10 @@ npm run start
 
 ## 📂 Project Structure
 
-```
+```text
 flam-project/
 ├── app/
+
 │   ├── api/
 │   │   └── data/
 │   │       └── route.ts             # Server-Sent Events (SSE) & batch API endpoint
@@ -192,8 +197,8 @@ flam-project/
 ├── next.config.js
 ├── tailwind.config.js
 ├── tsconfig.json
-├── README.md
-└── PERFORMANCE.md                   # Detailed performance audit & benchmarking report
+├── LICENSE                          # MIT License
+└── README.md
 ```
 
 ---
@@ -210,4 +215,6 @@ flam-project/
 ---
 
 ## 📄 License
+
 This project is open-source under the [MIT License](LICENSE).
+

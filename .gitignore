@@ -53,3 +53,13 @@ Desktop.ini
 !.vscode/settings.json
 *.sublime-workspace
 *.sublime-project
+
+# Internal assignment briefs & planning documents
+*.pdf
+PERFORMANCE.md
+SKILL.md
+UI.md
+frontend.md
+nextjs-implementation.md
+vue-implementation.md
+
